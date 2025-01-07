@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #38a057;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: inline-block;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="file"] {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #38a057;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #45a049;
+    box-shadow: 0 0 8px rgba(72, 239, 128, 0.5);
+}
+
+input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #38a057;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #38a057;
+    box-shadow: 0 0 8px rgba(72, 239, 128, 0.5);
+}
+
+button {
+    background-color: #38a057;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#new-input-container {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+}

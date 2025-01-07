@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel Deduplicator</title>
+    <link rel="stylesheet" href="/static/index.css" />
+  </head>
+  <body>
+    <h1>Excel Deduplicator</h1>
+
+    <p>
+      Welcome to 'Excel Deduplicator'! <br />
+      The service allows to remove duplicate lines from your .xlsx file by a column or set of columns. <br />
+      If values in those colums have duplications in other records, the application will keep only the first unique record. <br />
+    </p>
+    <form action="/handle_file">
+      <label for="xls_file" class="custom-file-upload">Your Excel File</label>
+      <input type="file" name="xls_file" id="xls_file" />
+      <label for="container">Columns</label>
+      <div id="new-input-container">
+        <input type="text" placeholder="Place the column name..." />
+      </div>
+      <button type="button" onclick="createNewInputFields()">Add New Column</button>
+
+      <button type="submit">GO!</button>
+    </form>
+
+    <script>
+      function createNewInputFields() {
+        var container = document.getElementById('new-input-container')
+      
+        const newElem = document.createElement('input')
+        newElem.setAttribute('type', 'text')
+        newElem.setAttribute('placeholder', 'Place the column name...')
+        container.appendChild(newElem)
+      }
+    </script>
+  </body>
+</html>
