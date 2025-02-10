@@ -10,16 +10,16 @@
     <h1>Excel Deduplicator</h1>
 
     <p>
-      Welcome to 'Excel Deduplicator'! <br />
+      Welcome to "Excel Deduplicator"! <br />
       The service allows to remove duplicate lines from your .xlsx file by a column or set of columns. <br />
       If values in those colums have duplications in other records, the application will keep only the first unique record. <br />
     </p>
-    <form action="/handle_file">
+    <form action="/handle_file" method="post" enctype="multipart/form-data">
       <label for="xls_file" class="custom-file-upload">Your Excel File</label>
-      <input type="file" name="xls_file" id="xls_file" />
+      <input type="file" name="xls_file" id="xls_file" required/>
       <label for="container">Columns</label>
       <div id="new-input-container">
-        <input type="text" placeholder="Place the column name..." />
+        <input type="text" placeholder="Place the column name..." name="column-1" required/>
       </div>
       <button type="button" onclick="createNewInputFields()">Add New Column</button>
 
@@ -27,12 +27,16 @@
     </form>
 
     <script>
+      let inputCount = 1;
       function createNewInputFields() {
-        var container = document.getElementById('new-input-container')
-      
-        const newElem = document.createElement('input')
-        newElem.setAttribute('type', 'text')
-        newElem.setAttribute('placeholder', 'Place the column name...')
+        var container = document.getElementById("new-input-container")
+        
+        inputCount++
+        const newElem = document.createElement("input")
+        newElem.type = "text"
+        newElem.placeholder = "Place the column name..."
+        newElem.name = `column-${inputCount}`
+        newElem.required = true
         container.appendChild(newElem)
       }
     </script>
